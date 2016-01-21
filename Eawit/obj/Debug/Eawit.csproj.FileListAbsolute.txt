@@ -1,0 +1,10 @@
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\bin\Debug\Eawit.exe.config
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\bin\Debug\Eawit.exe
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\bin\Debug\Eawit.pdb
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.csprojResolveAssemblyReference.cache
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.AboutEawit.resources
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.Eawit.resources
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.Properties.Resources.resources
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.csproj.GenerateResource.Cache
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.exe
+c:\users\easai\documents\visual studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.pdb
