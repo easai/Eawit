@@ -47,11 +47,12 @@
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uppercaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lowercaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.capitalizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vIEWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.capitalizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timestampToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -59,9 +60,10 @@
             // textBox
             // 
             this.textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox.Location = new System.Drawing.Point(0, 28);
+            this.textBox.Location = new System.Drawing.Point(0, 24);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(1282, 751);
+            this.textBox.Size = new System.Drawing.Size(962, 609);
             this.textBox.TabIndex = 0;
             this.textBox.Text = "";
             this.textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
@@ -77,7 +79,8 @@
             this.vIEWToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1282, 28);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(962, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -90,41 +93,41 @@
             this.saveasToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.fILEToolStripMenuItem.Name = "fILEToolStripMenuItem";
-            this.fILEToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.fILEToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.fILEToolStripMenuItem.Text = "&FILE";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveasToolStripMenuItem
             // 
             this.saveasToolStripMenuItem.Name = "saveasToolStripMenuItem";
-            this.saveasToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.saveasToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveasToolStripMenuItem.Text = "Save &as";
             this.saveasToolStripMenuItem.Click += new System.EventHandler(this.saveasToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -135,20 +138,20 @@
             this.aboutEawitToolStripMenuItem,
             this.todoToolStripMenuItem});
             this.hELPToolStripMenuItem.Name = "hELPToolStripMenuItem";
-            this.hELPToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.hELPToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.hELPToolStripMenuItem.Text = "&HELP";
             // 
             // aboutEawitToolStripMenuItem
             // 
             this.aboutEawitToolStripMenuItem.Name = "aboutEawitToolStripMenuItem";
-            this.aboutEawitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.aboutEawitToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.aboutEawitToolStripMenuItem.Text = "&About Eawit";
             this.aboutEawitToolStripMenuItem.Click += new System.EventHandler(this.aboutEawitToolStripMenuItem_Click);
             // 
             // todoToolStripMenuItem
             // 
             this.todoToolStripMenuItem.Name = "todoToolStripMenuItem";
-            this.todoToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.todoToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.todoToolStripMenuItem.Text = "&Todo";
             this.todoToolStripMenuItem.Click += new System.EventHandler(this.todoToolStripMenuItem_Click);
             // 
@@ -162,72 +165,80 @@
             this.pasteToolStripMenuItem,
             this.uppercaseToolStripMenuItem,
             this.lowercaseToolStripMenuItem,
-            this.capitalizeToolStripMenuItem});
+            this.capitalizeToolStripMenuItem,
+            this.timestampToolStripMenuItem});
             this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
-            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.eDITToolStripMenuItem.Text = "&EDIT";
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.undoToolStripMenuItem.Text = "&Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.redoToolStripMenuItem.Text = "&Redo";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // uppercaseToolStripMenuItem
             // 
             this.uppercaseToolStripMenuItem.Name = "uppercaseToolStripMenuItem";
-            this.uppercaseToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.uppercaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.uppercaseToolStripMenuItem.Text = "&Uppercase";
             this.uppercaseToolStripMenuItem.Click += new System.EventHandler(this.uppercaseToolStripMenuItem_Click);
             // 
             // lowercaseToolStripMenuItem
             // 
             this.lowercaseToolStripMenuItem.Name = "lowercaseToolStripMenuItem";
-            this.lowercaseToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.lowercaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.lowercaseToolStripMenuItem.Text = "&Lowercase";
             this.lowercaseToolStripMenuItem.Click += new System.EventHandler(this.lowercaseToolStripMenuItem_Click);
+            // 
+            // capitalizeToolStripMenuItem
+            // 
+            this.capitalizeToolStripMenuItem.Name = "capitalizeToolStripMenuItem";
+            this.capitalizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.capitalizeToolStripMenuItem.Text = "Ca&pitalize";
+            this.capitalizeToolStripMenuItem.Click += new System.EventHandler(this.capitalizeToolStripMenuItem_Click);
             // 
             // vIEWToolStripMenuItem
             // 
             this.vIEWToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fontToolStripMenuItem});
             this.vIEWToolStripMenuItem.Name = "vIEWToolStripMenuItem";
-            this.vIEWToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
+            this.vIEWToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.vIEWToolStripMenuItem.Text = "&VIEW";
             // 
             // fontToolStripMenuItem
             // 
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.fontToolStripMenuItem.Text = "&Font";
             // 
             // statusStrip
@@ -235,9 +246,10 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusText});
-            this.statusStrip.Location = new System.Drawing.Point(0, 757);
+            this.statusStrip.Location = new System.Drawing.Point(0, 611);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1282, 22);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip.Size = new System.Drawing.Size(962, 22);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip";
             // 
@@ -246,22 +258,23 @@
             this.statusText.Name = "statusText";
             this.statusText.Size = new System.Drawing.Size(0, 17);
             // 
-            // capitalizeToolStripMenuItem
+            // timestampToolStripMenuItem
             // 
-            this.capitalizeToolStripMenuItem.Name = "capitalizeToolStripMenuItem";
-            this.capitalizeToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.capitalizeToolStripMenuItem.Text = "Ca&pitalize";
-            this.capitalizeToolStripMenuItem.Click += new System.EventHandler(this.capitalizeToolStripMenuItem_Click);
+            this.timestampToolStripMenuItem.Name = "timestampToolStripMenuItem";
+            this.timestampToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.timestampToolStripMenuItem.Text = "&Timestamp";
+            this.timestampToolStripMenuItem.Click += new System.EventHandler(this.timestampToolStripMenuItem_Click);
             // 
             // Eawit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 779);
+            this.ClientSize = new System.Drawing.Size(962, 633);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Eawit";
             this.Text = "Eawit";
             this.menuStrip.ResumeLayout(false);
@@ -299,6 +312,7 @@
         private System.Windows.Forms.ToolStripMenuItem uppercaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lowercaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem capitalizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timestampToolStripMenuItem;
     }
 }
 

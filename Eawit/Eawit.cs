@@ -425,5 +425,13 @@ namespace Eawit
             ModifyString func = capitalize;
             applyChangesRegion(func);
         }
+
+        private void timestampToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String timestamp = DateTime.Today.ToString("ddd MMM dd");
+            int pos = textBox.SelectionStart;
+            textBox.Text = textBox.Text.Substring(0, pos) + timestamp + textBox.Text.Substring(pos);
+            textBox.SelectionStart = pos + timestamp.Length;
+        }
     }
 }
