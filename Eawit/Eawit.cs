@@ -22,6 +22,9 @@ namespace Eawit
         public Eawit()
         {
             InitializeComponent();
+            Font font = textBox.Font;
+            Font newFont = new Font(font.FontFamily, 16);
+            textBox.Font = newFont;
         }
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
