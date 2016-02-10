@@ -1,6 +1,6 @@
 font
 
-today
+x today 
 
 control-space
 

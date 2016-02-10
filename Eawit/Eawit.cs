@@ -179,6 +179,9 @@ namespace Eawit
                         case Keys.E:
                             pos = textBox.TextLength;
                             break;
+                        case Keys.T:
+                            timestamp();
+                            break;
                     }
 
                     switch (e.KeyCode)
@@ -427,6 +430,11 @@ namespace Eawit
         }
 
         private void timestampToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timestamp();
+        }
+
+        void timestamp()
         {
             String timestamp = DateTime.Today.ToString("ddd MMM dd");
             int pos = textBox.SelectionStart;
