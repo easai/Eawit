@@ -13,11 +13,12 @@ namespace Eawit
 {
     public partial class Eawit : Form
     {
-        String fileName="untitled.txt";
+        String fileName = "untitled.txt";
         List<String> buffer = new List<String>();
-        enum ControlMode{ None, ModeC, ModeQ, ModeX };
+        enum ControlMode { None, ModeC, ModeQ, ModeX };
         ControlMode controlMode;
         int selectionStart;
+        FileStream file;
 
         public Eawit()
         {
@@ -52,7 +53,17 @@ namespace Eawit
 
         private void openFile()
         {
+            if (textBox.Modified)
+            {
+                DialogResult res = MessageBox.Show("保存しますか？", "Warning", MessageBoxButtons.OKCancel);
+                if (res == DialogResult.OK)
+                {
+                    fileSave();
+                }
+            }
+
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.CheckFileExists = false;
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 fileName = dialog.FileName;
@@ -67,14 +78,14 @@ namespace Eawit
 
         private void fileSave()
         {
-            if(fileName=="untitled.txt")
+            if (fileName == "untitled.txt")
             {
                 fileSaveAs();
             }
             else
             {
                 saveText();
-            }
+            }            
         }
 
         private void fileSaveAs()
@@ -92,7 +103,8 @@ namespace Eawit
             try
             {
                 String text = textBox.Text;
-                File.WriteAllText(fileName, text);
+                File.WriteAllText(fileName,text);
+                textBox.Modified = false;
             }
             catch (Exception exception)
             {
@@ -112,14 +124,7 @@ namespace Eawit
 
         private void newFile()
         {
-            if (textBox.Modified)
-            {
-                DialogResult res = MessageBox.Show("保存しますか？", "Warning", MessageBoxButtons.OKCancel);
-                if (res == DialogResult.OK)
-                {
-                    fileSave();
-                }
-            }
+            fileSave();
             fileName = "untitled.txt";
             textBox.Clear();
         }
@@ -146,12 +151,12 @@ namespace Eawit
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
         {
-            int row = textBox.GetLineFromCharIndex(textBox.SelectionStart)+1;
-            int col = textBox.SelectionStart-textBox.GetFirstCharIndexOfCurrentLine()+1;
+            int row = textBox.GetLineFromCharIndex(textBox.SelectionStart) + 1;
+            int col = textBox.SelectionStart - textBox.GetFirstCharIndexOfCurrentLine() + 1;
             int maxRow = textBox.Lines.Count();
             int orgPos = textBox.SelectionStart;
 
-            if (Control.ModifierKeys==Keys.Control)
+            if (Control.ModifierKeys == Keys.Control)
             {
                 int pos = textBox.SelectionStart;
                 int lineEnd = textBox.TextLength;
@@ -174,7 +179,7 @@ namespace Eawit
                             break;
                         case Keys.D:
                             int start = textBox.GetFirstCharIndexOfCurrentLine();
-                            String lineStr = Environment.NewLine+textBox.Text.Substring(start, lineEnd - start);
+                            String lineStr = Environment.NewLine + textBox.Text.Substring(start, lineEnd - start);
                             textBox.Text = textBox.Text.Insert(lineEnd, lineStr);
                             pos = orgPos;
                             textBox.Modified = true;
@@ -241,7 +246,7 @@ namespace Eawit
                             pos++;
                             break;
                         case Keys.K:
-                            if(orgPos==lineEnd && 0<maxRow)
+                            if (orgPos == lineEnd && 0 < maxRow)
                             {
                                 textBox.Text = textBox.Text.Remove(orgPos, 1);
                                 pos = orgPos;
@@ -263,13 +268,13 @@ namespace Eawit
                         case Keys.L:
                             int cur = row + (int)((maxRow - row) * .5);
                             cur = Math.Min(cur, maxRow);
-                            int tempCaretPos=textBox.GetFirstCharIndexFromLine(cur);
+                            int tempCaretPos = textBox.GetFirstCharIndexFromLine(cur);
                             textBox.SelectionStart = tempCaretPos;
                             pos = orgPos;
                             break;
                         case Keys.M:
                             textBox.Text = textBox.Text.Insert(orgPos, Environment.NewLine);
-                            pos = orgPos+1;
+                            pos = orgPos + 1;
                             break;
                         case Keys.N:
                             if (row < maxRow)
@@ -341,7 +346,7 @@ namespace Eawit
                 // Disable the original 
                 e.Handled = true;
             }
-            statusText.Text = "Column "+col+" Line "+row+" / "+maxRow;
+            statusText.Text = "Column " + col + " Line " + row + " / " + maxRow;
         }
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -375,7 +380,7 @@ namespace Eawit
             {
                 if (e.KeyChar == ' ')
                 {
-                    selectionStart=textBox.SelectionStart;
+                    selectionStart = textBox.SelectionStart;
                     e.Handled = true;
                 }
             }
@@ -396,7 +401,7 @@ namespace Eawit
         private String capitalize(String str)
         {
             int len = str.Length;
-            if(0<len)
+            if (0 < len)
             {
                 str = str.Substring(0, 1).ToUpper() + str.Substring(1);
             }
@@ -405,7 +410,7 @@ namespace Eawit
 
         private void applyChangesRegion(ModifyString func)
         {
-            
+
             int pos = textBox.SelectionStart;
             String str = textBox.Text.Substring(pos, textBox.SelectionLength);
             str = func(str);
