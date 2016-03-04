@@ -280,7 +280,10 @@ namespace Eawit
                             if (row < maxRow)
                             {
                                 pos = textBox.GetFirstCharIndexFromLine(row);
-                                pos += col - 1;
+                                if (col < textBox.GetFirstCharIndexFromLine(row + 1) - pos)
+                                    pos += col - 1;
+                                else
+                                    pos = textBox.GetFirstCharIndexFromLine(row + 1) - 1;
                             }
                             break;
                         case Keys.P:
@@ -288,7 +291,10 @@ namespace Eawit
                             if (0 < currentRow)
                             {
                                 pos = textBox.GetFirstCharIndexFromLine(currentRow - 1);
-                                pos += col - 1;
+                                if (col < textBox.GetFirstCharIndexFromLine(currentRow) - pos)
+                                    pos += col - 1;
+                                else
+                                    pos = textBox.GetFirstCharIndexFromLine(currentRow) - 1;
                             }
                             break;
                         case Keys.Q:
