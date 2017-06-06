@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -55,7 +51,7 @@ namespace Eawit
         {
             if (textBox.Modified)
             {
-                DialogResult res = MessageBox.Show("保存しますか？", "Warning", MessageBoxButtons.OKCancel);
+                DialogResult res = MessageBox.Show("Click OK if you are saving the file.", "Warning", MessageBoxButtons.OKCancel);
                 if (res == DialogResult.OK)
                 {
                     fileSave();
@@ -454,6 +450,15 @@ namespace Eawit
             int pos = textBox.SelectionStart;
             textBox.Text = textBox.Text.Substring(0, pos) + timestamp + textBox.Text.Substring(pos);
             textBox.SelectionStart = pos + timestamp.Length;
+        }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog fd = new FontDialog();
+            if (fd.ShowDialog() != DialogResult.Cancel)
+            {
+                textBox.Font = fd.Font;
+            }
         }
     }
 }
