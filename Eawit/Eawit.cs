@@ -149,8 +149,8 @@ namespace Eawit
         {
             int row = textBox.GetLineFromCharIndex(textBox.SelectionStart) + 1;
             int col = textBox.SelectionStart - textBox.GetFirstCharIndexOfCurrentLine() + 1;
-            int maxRow = textBox.Lines.Count();
             int orgPos = textBox.SelectionStart;
+            int maxRow = textBox.Lines.Count();
 
             if (Control.ModifierKeys == Keys.Control)
             {
@@ -310,8 +310,15 @@ namespace Eawit
                             controlMode = ControlMode.ModeX;
                             break;
                         case Keys.Y:
-                            textBox.Text = textBox.Text.Insert(orgPos, buffer.Last());
-                            pos = orgPos;
+                            if (buffer.Any())
+                            {
+                                textBox.Text = textBox.Text.Insert(orgPos, buffer.Last());
+                                pos = orgPos;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Buffer is empty. Cannot perform the operation.");
+                            }
                             break;
                     }
 
@@ -348,7 +355,6 @@ namespace Eawit
                 // Disable the original 
                 e.Handled = true;
             }
-            statusText.Text = "Column " + col + " Line " + row + " / " + maxRow;
         }
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)

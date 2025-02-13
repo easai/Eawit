@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\toxme\\source\\repos\\easai\\Eawit\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{06068F4F-9FCD-4D4A-8B82-2928FEA5AC56}|Eawit\\Eawit.csproj|c:\\users\\toxme\\source\\repos\\easai\\eawit\\eawit\\eawit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06068F4F-9FCD-4D4A-8B82-2928FEA5AC56}|Eawit\\Eawit.csproj|solutionrelative:eawit\\eawit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Eawit.cs",
+              "DocumentMoniker": "C:\\Users\\toxme\\source\\repos\\easai\\Eawit\\Eawit\\Eawit.cs",
+              "RelativeDocumentMoniker": "Eawit\\Eawit.cs",
+              "ToolTip": "C:\\Users\\toxme\\source\\repos\\easai\\Eawit\\Eawit\\Eawit.cs",
+              "RelativeToolTip": "Eawit\\Eawit.cs",
+              "ViewState": "AgIAAF8BAAAAAAAAAAAiwGYBAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T19:01:34.292Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
