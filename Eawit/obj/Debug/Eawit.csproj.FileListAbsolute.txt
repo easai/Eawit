@@ -18,3 +18,14 @@ D:\Documents\Visual Studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.AboutEawit.
 D:\Documents\Visual Studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.Eawit.resources
 D:\Documents\Visual Studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.Properties.Resources.resources
 D:\Documents\Visual Studio 2015\Projects\Eawit\Eawit\obj\Debug\Eawit.csproj.GenerateResource.Cache
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\bin\Debug\Eawit.exe.config
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\bin\Debug\Eawit.exe
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\bin\Debug\Eawit.pdb
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\obj\Debug\Eawit.csproj.AssemblyReference.cache
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\obj\Debug\Eawit.AboutEawit.resources
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\obj\Debug\Eawit.Eawit.resources
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\obj\Debug\Eawit.Properties.Resources.resources
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\obj\Debug\Eawit.csproj.GenerateResource.cache
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\obj\Debug\Eawit.csproj.CoreCompileInputs.cache
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\obj\Debug\Eawit.exe
+C:\Users\toxme\source\repos\easai\Eawit\Eawit\obj\Debug\Eawit.pdb
